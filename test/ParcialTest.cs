@@ -77,8 +77,8 @@ namespace Calificaciones
             segundoParcial.AgregarCriterio(c7);
             segundoParcial.AgregarCriterio(c8);
 
-            Assert.That(primerParcial.ValidarCriteriosDefinidos(), Is.EqualTo(false));
-            Assert.That(segundoParcial.ValidarCriteriosDefinidos(), Is.EqualTo(true));
+            Assert.That(primerParcial.ValidarCriteriosDistintos(), Is.EqualTo(false));
+            Assert.That(segundoParcial.ValidarCriteriosDistintos(), Is.EqualTo(true));
 
 
         }

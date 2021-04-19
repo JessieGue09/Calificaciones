@@ -57,7 +57,7 @@ namespace Calificaciones
         {
 
 
-            if (tercerParcial == 0 || primerParcial == 0 || segundoParcial == 0 || tercerParcial == 5 || tercerParcial == 6)
+            if (tercerParcial == 0 || primerParcial == 0 || segundoParcial == 0 || tercerParcial == 5)
             {
                 return true;
             }
