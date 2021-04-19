@@ -44,10 +44,10 @@ namespace Calificaciones
 
             bool succes = primerParcial.ValidarSumaCriterios(1.0f);
             Assert.That(succes, Is.EqualTo(true));
-            
+
             succes = segundoParcial.ValidarSumaCriterios(1.0f);
-            Assert.That(succes, Is.EqualTo(false));            
-            
+            Assert.That(succes, Is.EqualTo(false));
+
         }
 
         [Test, Description("Se valida correctamente que los criterios en un Parcial deben ser distintos")]
@@ -80,29 +80,29 @@ namespace Calificaciones
             Assert.That(primerParcial.ValidarCriteriosDefinidos(), Is.EqualTo(false));
             Assert.That(segundoParcial.ValidarCriteriosDefinidos(), Is.EqualTo(true));
 
-            
+
         }
 
         [Test, Description("Se valida correctamente que los criterios son requeridos en un Parcial")]
         public void TestCriteriosRequeridos()
         {
-           Parcial primerParcial = new Parcial();
-           Parcial segundoParcial = new Parcial();
+            Parcial primerParcial = new Parcial();
+            Parcial segundoParcial = new Parcial();
 
             Criterio c1 = new Criterio("c1", 1.0f);
 
-           primerParcial.AgregarCriterio(c1);
+            primerParcial.AgregarCriterio(c1);
 
             Assert.That(primerParcial.ValidarCriteriosDefinidos, Is.EqualTo(true));
             Assert.That(segundoParcial.ValidarCriteriosDefinidos, Is.EqualTo(false));
-            
+
         }
 
         [Test, Description("El Parcial calcula correctamente la calificación")]
         public void TestCalcularCalificacion()
         {
-           Parcial primerParcial = new Parcial();
-            
+            Parcial primerParcial = new Parcial();
+
             Criterio c1 = new Criterio("c1", 0.25f);
             Criterio c2 = new Criterio("c1", 0.25f);
             Criterio c3 = new Criterio("c1", 0.25f);
@@ -124,13 +124,13 @@ namespace Calificaciones
             primerParcial.AgregarCriterio(c2);
             primerParcial.AgregarCriterio(c3);
             primerParcial.AgregarCriterio(c4);
-            
+
             int calificacionPrimerParcial = primerParcial.CalcularCalificacion(calificacionesCriterios);
             Assert.That(calificacionPrimerParcial, Is.EqualTo(8));
 
             int calificacionPrimerParcial2 = primerParcial.CalcularCalificacion(calificacionesCriterios2);
             Assert.That(calificacionPrimerParcial2, Is.EqualTo(7));
-        
+
         }
     }
 }

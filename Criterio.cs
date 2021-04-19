@@ -10,13 +10,12 @@ namespace Calificaciones
 
         public Criterio(string nombre, float porcentaje)
         {
-            if (nombre == "" ||nombre == null)
+            if (nombre == "" || nombre == null)
             {
                 throw new ArgumentException("El nombre es requerido.");
             }
             this.nombre = nombre;
 
-            // ! -> Diferente de
             if (!(porcentaje > 0f && porcentaje <= 1f))
             {
                 throw new ArgumentException("El porcentaje debe ser mayor que 0 y menor o igual a 1");
