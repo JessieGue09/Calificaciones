@@ -34,10 +34,10 @@ namespace Calificaciones
             }
 
         }
-      
+
         public bool ValidarCriteriosDistintos()
         {
-    
+
             var hashset = new HashSet<string>(); // para determinar si ya habíamos visto este criterio
             var duplicates = new HashSet<string>(); // contendrá los criterios que están duplicados
             var count = 0;
@@ -62,18 +62,6 @@ namespace Calificaciones
                 return false;
             }
 
-            // var esDiferente = new bool();
-            // esDiferente = true;
-            // for(int i = 0; i < criterios.Count; i++){
-            //     for(int j = 0; j < criterios.Count; j++){
-            //         if(criterios[i].nombre.Equals(criterios[j].nombre) && i != j){
-            //             esDiferente = false;
-            //         }else if(!criterios[i].nombre.Equals(criterios[j].nombre) && i != j && esDiferente == true){
-            //             esDiferente = true;
-            //         }
-            //     }
-            // }
-            //return esDiferente;
         }
 
 
@@ -96,7 +84,7 @@ namespace Calificaciones
             }
 
         }
-       
+
         public int CalcularCalificacion(List<float> calificacionesDeCadaCriterio)
         {
             float valorCalificacion = 0f;
