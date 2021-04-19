@@ -12,7 +12,22 @@ namespace Calificaciones
             primerParcial.AgregarCriterio(new Criterio("Prácticas", 0.25f));
             primerParcial.AgregarCriterio(new Criterio("Participación/Esfuerzo", 0.1f));
             primerParcial.AgregarCriterio(new Criterio("Proyecto", 0.4f));
-            primerParcial.AgregarCriterio(new Criterio("", -0.5f));
+            //primerParcial.AgregarCriterio(new Criterio("", -0.5f));
+
+            Parcial segundoParcial = new Parcial();
+            segundoParcial.AgregarCriterio(new Criterio("Trabajo en clase", 0.25f));
+            segundoParcial.AgregarCriterio(new Criterio("Prácticas", 0.25f));
+            segundoParcial.AgregarCriterio(new Criterio("Participación/Esfuerzo", 0.1f));
+            segundoParcial.AgregarCriterio(new Criterio("Proyecto", 0.4f));
+            //segundoParcial.AgregarCriterio(new Criterio("", -0.5f));
+
+            Parcial tercerParcial = new Parcial();
+            tercerParcial.AgregarCriterio(new Criterio("Trabajo en clase", 0.25f));
+            tercerParcial.AgregarCriterio(new Criterio("Prácticas", 0.25f));
+            tercerParcial.AgregarCriterio(new Criterio("Participación/Esfuerzo", 0.1f));
+            tercerParcial.AgregarCriterio(new Criterio("Proyecto", 0.4f));
+            //tercerParcial.AgregarCriterio(new Criterio("", -0.5f));
+
             // % permitidos? 0 al 100
             // 1 al 100
             // > 0, <= 100
@@ -25,9 +40,26 @@ namespace Calificaciones
             
             int calificacionPrimerParcial = primerParcial.CalcularCalificacion(calificacionCriteriosPrimerParcial);
             
-            // 8 calificacionSegundoParcial 
+            // calificacionSegundoParcial 
+            List<float> calificacionCriteriosSegundoParcial = new List<float>();
+            calificacionCriteriosSegundoParcial.Add(8);
+            calificacionCriteriosSegundoParcial.Add(9);
+            calificacionCriteriosSegundoParcial.Add(10);
+            calificacionCriteriosSegundoParcial.Add(9);
+            
+            int calificacionSegundoParcial = segundoParcial.CalcularCalificacion(calificacionCriteriosSegundoParcial);
+
             // 9 calificacionTercerParcial
-            Materia teoriaDeLaComputacion = new Materia(calificacionPrimerParcial, 8, 9);
+            List<float> calificacionCriteriosTercerParcial = new List<float>();
+            calificacionCriteriosTercerParcial.Add(8);
+            calificacionCriteriosTercerParcial.Add(9);
+            calificacionCriteriosTercerParcial.Add(10);
+            calificacionCriteriosTercerParcial.Add(9);
+            
+            int calificacionTercerParcial = tercerParcial.CalcularCalificacion(calificacionCriteriosSegundoParcial);
+
+
+            Materia teoriaDeLaComputacion = new Materia(calificacionPrimerParcial, calificacionSegundoParcial, calificacionTercerParcial);
         }
     }
 }
